@@ -1,35 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Kaushan+Script&family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>FlashDeck - Assinaturas</title>
 </head>
+
 <body>
     <header class="cabecalho">
+        <a href="../index.html"><img src="../img/logo flashdeck 1x.png" alt="Logo FlashDeck" class="logo"></a>
         <nav>
-            <ul>
-                <li><a href="Funcionalidades.html">Funcionalidades</a></li>
-                <li><a href="Comunidade.html">Comunidade</a></li>
-                <li><a href="RedesSociais.html">Redes Sociais</a></li>
-                <li><a href="Sobre.html">Sobre</a></li>
+            <ul class="menu-list">
+                <li><a href="explorar.html">Explorar</a></li>
+                <li><a href="dicas-de-estudo.html">Dicas de Estudo</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="assinaturas-page/assinaturas.html">Assinaturas</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
             </ul>
-
-            <ul>
-                <li><a href="login-page/registro.html" class="button">Entrar</a></li>
-                <li><a href="login-page/registro.html" class="button">Cadastrar-se</a></li>
-            </ul>
-
-            <a href="../index.html"><img src="../img/logo flashdeck 1x.png" alt="" class="logo"></a>
+            <div class="button-container">
+                <a href="registro.html" class="button entrar">Entrar</a>
+                <a href="registro.html" class="button cadastrar">Cadastrar-se</a>
+            </div>
         </nav>
+        <button class="menu-toggle">☰</button>
     </header>
 
 
+    <h1 class="plano">Escolha o melhor plano para você!</h1>
+
+    <section>
 
 
 
 
-    
+
+        <div class="iniciante">
+
+            <div class="amarelo"></div>
+            <h1 class="titulo">Iniciante</h1>
+            <p class="sub">Ideal para explorar e aprender sem compromisso</p>
+
+
+            <button class="plano-iniciante">
+                <h1 class="seu-plano">✔ Seu plano atual</h1>
+            </button>
+
+
+            <h1 class="preco">Grátis</h1>
+            <p class="comeceagr">Comece agora</p>
+
+
+            <hr class="linha">
+
+
+
+            <p class="beneficios">Acesso completo a todos os FlashCards disponíveis na plataforma.</p>
+            <p class="beneficios">Criação ilimitado de conjuntos de flashcards.</p>
+            <p class="beneficios">Ferramentas de gamificação (recompensas, medalhas e rankings).</p>
+        </div>
+
+
+
+
+        <div class="pro">
+            <div class="verde"></div>
+            <h1 class="titulo">Pro</h1>
+            <p class="sub">Recursos avançados para maximizar seu potencial.</p>
+
+
+            <button class="plano-pro">
+                <h1 class="seu-pro">Escolha este plano</h1>
+            </button>
+
+
+            <h1 class="preco">R$5,99</h1>
+            <p class="desconto">🏷️ 30% de desconto</p>
+
+
+            <hr class="linha">
+
+
+            <p class="beneficios">Todas as funcionalidades do Plano Gratuito.</p>
+            <p class="beneficios">Ferramentas de personalização avançada (temas, ícones, templates exclusivos).</p>
+            <p class="beneficios">Possibilidade de criação colaborativa de flashcards com outros usuários Pro/Premium.</p>
+            <p class="beneficios">Exportação de flashcards para PDF ou outros formatos para estudos offline.</p>
+        </div>
+
+
+
+
+        <div class="premium">
+            <div class="roxo"></div>
+
+            <h1 class="titulo">Premium</h1>
+            <p class="sub">Desbloqueie o máximo de vantagens e monetize seus FlashCards.</p>
+
+
+            <button class="plano-pro">
+                <h1 class="seu-pro">Escolha este plano</h1>
+            </button>
+
+
+            <h1 class="preco">R$8,99</h1>
+            <p class="desconto">🏷️ 50% de desconto</p>
+
+
+            <hr class="linha">
+
+
+            <p class="beneficios">Todas as funcionalidades do Plano Pro.</p>
+            <p class="beneficios">Exclusividade para vender flashcards na plataforma.</p>
+            <p class="beneficios">Acesso antecipado a novas funcionalidades.</p>
+            <p class="beneficios">Recomendação personalizada com base no desempenho, otimizando o aprendizado.</p>
+            <p class="beneficios">Grupos de estudo fechados com outros usuários Premium.</p>
+            <p class="beneficios">Acesso a Flashcards Premium: conjuntos exclusivos criados por especialistas, oferecendo conteúdo de alta qualidade em temas específicos.</p>
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </section>
+    <script src="script.js"></script>
 </body>
+
 </html>
