@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashDeck - Comunidade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="comunidade.css">
+    <script defer src="comunidade.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .welcome-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-section h1 {
+            color: #007bff;
+            font-size: 2.5em;
+        }
+
+        .post-button {
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .post-button:hover {
+            background-color: #218838;
+        }
+
+        .posts-section {
+            margin-top: 20px;
+        }
+
+        .post {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .post p {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .like-button {
+            background-color: transparent;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 1em;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .like-button:hover {
+            text-decoration: underline;
+        }
+
+        .like-count {
+            margin-left: 5px;
+        }
+
+        .comment-section {
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .comment {
+            margin-bottom: 5px;
+        }
+
+        .comment-input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .comment-button {
+            padding: 8px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Comunidade FlashDeck</h1>
+    </header>
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Explore, Compartilhe e Inspire!</h1>
+            <p>Faça parte da nossa comunidade incrível! Crie seus próprios flashcards, compartilhe com outros usuários e ajude a inspirar o aprendizado de todos.</p>
+            <button class="post-button" onclick="createNewPost()">Criar Novo Post</button>
+        </div>
+
+        <div class="posts-section" id="posts-section">
+            <div class="post" id="post-1">
+                <h3>Post de Exemplo</h3>
+                <p>Este é um post de exemplo. Compartilhe suas ideias com a comunidade!</p>
+                <button class="like-button" onclick="likePost('post-1')">
+                    Curtir <span class="like-count" id="like-count-post-1">0</span>
+                </button>
+                <div class="comment-section">
+                    <div class="comment">Comentário 1: Muito bom!</div>
+                    <input type="text" class="comment-input" placeholder="Adicione um comentário...">
+                    <button class="comment-button" onclick="addComment('post-1')">Comentar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function likePost(postId) {
+            const likeCountElement = document.getElementById(`like-count-${postId}`);
+            let likeCount = parseInt(likeCountElement.textContent);
+            likeCount++;
+            likeCountElement.textContent = likeCount;
+        }
+
+        function addComment(postId) {
+            const postElement = document.getElementById(postId);
+            const commentInput = postElement.querySelector('.comment-input');
+            const commentText = commentInput.value;
+            if (commentText.trim() !== "") {
+                const commentSection = postElement.querySelector('.comment-section');
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.textContent = commentText;
+                commentSection.insertBefore(newComment, commentInput);
+                commentInput.value = "";
+            }
+        }
+
+        function createNewPost() {
+            const postSection = document.getElementById('posts-section');
+            const newPost = document.createElement('div');
+            newPost.classList.add('post');
+            newPost.innerHTML = `
+                <h3>Novo Post</h3>
+                <p>Este é um novo post criado pela comunidade!</p>
+                <button class="like-button" onclick="likePost('new-post')">
+                    Curtir <span class="like-count">0</span>
+                </button>
+                <div class="comment-section">
+                    <input type="text" class="comment-input" placeholder="Adicione um comentário...">
+                    <button class="comment-button" onclick="addComment('new-post')">Comentar</button>
+                </div>
+            `;
+            postSection.prepend(newPost);
+        }
+    </script>
+</body>
+</html>

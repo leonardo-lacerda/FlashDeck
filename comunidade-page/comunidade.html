@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão FlashCards</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .botao-flashcards {
+            display: flex;
+            align-items: center;
+            background: #e6e6e6;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .botao-flashcards:hover {
+            background: #d4d4d4;
+            border-color: #bbb;
+        }
+        .botao-flashcards .icone {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <button class="botao-flashcards">
+        <span class="icone">📇</span>
+        Meus FlashCards
+    </button>
+</body>
+</html>
